@@ -94,7 +94,5 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Recipe API server running on port ${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/api/health`);
-});
+const port = process.env.PORT || 5000;
+app.listen(port, '0.0.0.0', () => console.log(`Listening on ${port}`));
