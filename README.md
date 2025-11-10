@@ -48,10 +48,33 @@ SmartPlate solves this by allowing users to discover and share recipes, automati
 | **AI Tools** | ChatGPT API & GitHub Copilot |
 
 ---
+# docker-compose.yml
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 ## ⚙️ Installation & Setup
 
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/BigDaddyNate/SmartPlate.git
+git clone https://github.com/mcdonan-sys/SmartPlate_project.git
 cd SmartPlate
