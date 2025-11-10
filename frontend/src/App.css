@@ -30,6 +30,8 @@
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+Deploying container to Cloud Run service [smartplate-app]...
+Service URL: https://smartplate-app-xyz123.a.run.app
 
 .recipe-form {
   display: flex;
