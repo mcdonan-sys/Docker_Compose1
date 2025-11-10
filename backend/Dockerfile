@@ -26,4 +26,21 @@ EXPOSE 5000
 
 # start the app
 CMD ["npm", "start"]
+# Use Python 3.10 as the base image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy files to container
+COPY . .
+
+# Install dependencies
+RUN pip install flask
+
+# Expose the app port
+EXPOSE 8080
+
+# Run the application
+CMD ["python", "app.py"]
 
